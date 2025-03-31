@@ -3,7 +3,10 @@ let listaCompleta = localStorage.getItem("listaCompleta")
     ? JSON.parse(localStorage.getItem("listaCompleta")) 
     : [];
 
-document.addEventListener("DOMContentLoaded", mostrarLista);
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarLista();
+    aplicarModoOscuro();
+});
 
 function ObtenerItem() {
     let texto = document.getElementById('agregar').value;
@@ -51,12 +54,34 @@ function mostrarLista() {
 
     listaCompleta.forEach(item => {
         let li = document.createElement("li");
-        li.innerHTML = `
-            ${item.texto} - ${item.fecha} 
-            <button onclick="marcarComoCompletado(${item.id})">Completado</button>
-            <button onclick="eliminarItem(${item.id})">Borrar Item</button>
-        `;
-        li.style.textDecoration = item.completada ? "line-through" : "none";
+        let span = document.createElement("span");
+        span.textContent = `${item.texto} - ${item.fecha}`;
+        span.style.textDecoration = item.completada ? "line-through" : "none";
+        
+        let btnCompletar = document.createElement("button");
+        btnCompletar.textContent = "Completado";
+        btnCompletar.onclick = () => marcarComoCompletado(item.id);
+        
+        let btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "Borrar Item";
+        btnEliminar.onclick = () => eliminarItem(item.id);
+        
+        li.appendChild(span);
+        li.appendChild(btnCompletar);
+        li.appendChild(btnEliminar);
         listaHTML.appendChild(li);
     });
+}
+
+function toggleModoOscuro() {
+    const body = document.body;
+    body.classList.toggle("modo-oscuro");
+    const esModoOscuro = body.classList.contains("modo-oscuro");
+    localStorage.setItem("modoOscuro", esModoOscuro);
+}
+
+function aplicarModoOscuro() {
+    if (localStorage.getItem("modoOscuro") === "true") {
+        document.body.classList.add("modo-oscuro");
+    }
 }

@@ -54,7 +54,7 @@ button:last-of-type {
 }
 
 button:last-of-type:hover {
-    background-color: #2831a7;
+    background-color: #dd6571;
 }
 
 /* Filtros */
@@ -141,4 +141,44 @@ li button:nth-child(2):hover {
         width: 100%;
         margin-top: 5px;
     }
+} 
+/* Estilo para el texto de la tarea completada */
+.task-text.completed {
+    text-decoration: line-through;
+    color: #888;
 }
+
+/* Asegurar que los botones no sean afectados */
+li button {
+    text-decoration: none;
+}
+
+.modo-oscuro {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.modo-oscuro button {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.modo-oscuro input {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.modo-oscuro li {
+    background-color: #1e1e1e;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.modo-oscuro span {
+    color: #fff;
+}
+
+
