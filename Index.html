@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h2>Lista Tareas</h2>
+
+    <form onsubmit="event.preventDefault(); ObtenerItem();">
+        <input type="text" id="agregar" placeholder="Nueva tarea">
+        <button type="submit">Agregar</button>
+    </form>
+
+    <ul id="listaTareas"></ul>
+
+    <button onclick="eliminarCompletados()">Eliminar Completados</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

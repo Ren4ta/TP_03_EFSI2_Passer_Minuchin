@@ -1,0 +1,144 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Formulario */
+form {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Botón Agregar */
+button[type="submit"] {
+    background-color: #2831a7;
+}
+
+button[type="submit"]:hover {
+    background-color: #2831a7;
+}
+
+/* Botón Eliminar Completados */
+button:last-of-type {
+    background-color: #2831a7;
+}
+
+button:last-of-type:hover {
+    background-color: #2831a7;
+}
+
+/* Filtros */
+#filtro {
+    padding: 8px;
+    font-size: 14px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Lista de tareas */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+li {
+    background: white;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones dentro de cada tarea */
+li button {
+    font-size: 14px;
+    margin-left: 5px;
+    padding: 5px 8px;
+}
+
+/* Botón completar */
+li button:nth-child(1) {
+    background-color: #65f885b6;
+}
+
+li button:nth-child(1):hover {
+    background-color: #65f885b6;
+}
+
+/* Botón eliminar */
+li button:nth-child(2) {
+    background-color: #dd6571;
+}
+
+li button:nth-child(2):hover {
+    background-color: #dd6571;
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    li button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
